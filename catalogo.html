@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catálogo | Biblioteca Virtual</title>
+
+    <link rel="stylesheet" href="./assets/css/catalogo.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Biblioteca Virtual</a>
+
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="catalogo.html">Catálogo</a>
+                </li>
+
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+
+            <div>
+                <span>Mis préstamos:</span>
+                <strong id="contador-prestamos">0</strong>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="catalogo-header">
+            <h1>Catálogo de libros</h1>
+
+            <p>
+                Explorá nuestra colección y descubrí tu próxima lectura.
+            </p>
+        </section>
+
+
+        <section class="catalogo">
+            <section class="catalogo">
+                <div class="encabezado-catalogo">
+                    
+                </div>
+
+                <div class="buscador-catalogo">
+                    <label for="buscador-libros">Buscar libro</label>
+
+                    <input type="search" id="buscador-libros" placeholder="Buscar por título o autor..."
+                        autocomplete="off">
+                </div>
+
+                <div id="contenedor-libros" class="grilla-libros"></div>
+            </section>
+
+            <div id="contenedor-libros" class="grilla-libros">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            &copy; 2026 Biblioteca Virtual
+        </p>
+    </footer>
+
+
+    <script src="./assets/js/libros.js"></script>
+    <script src="./assets/js/catalogo.js"></script>
+
+</body>
+
+</html>
