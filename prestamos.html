@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Detalle del libro | Biblioteca Virtual</title>
+    <title>Mis préstamos | Biblioteca Virtual</title>
 
-    <link rel="stylesheet" href="./assets/css/libro.css">
+    <link rel="stylesheet" href="./assets/css/prestamos.css">
 </head>
 
 <body>
 
     <header>
         <nav>
-            <a href="index.html">Biblioteca Virtual</a>
+
+            <a href="index.html">
+                Biblioteca Virtual
+            </a>
 
             <ul>
                 <li>
@@ -23,6 +26,10 @@
 
                 <li>
                     <a href="catalogo.html">Catálogo</a>
+                </li>
+
+                <li>
+                    <a href="prestamos.html">Mis préstamos</a>
                 </li>
 
                 <li>
@@ -36,17 +43,31 @@
                     <strong id="contador-prestamos">0</strong>
                 </a>
             </div>
+
         </nav>
     </header>
 
 
     <main>
 
-        <section id="detalle-libro" class="detalle-libro">
+        <section class="prestamos">
 
-            <p class="estado-carga">
-                Cargando libro...
-            </p>
+            <div class="encabezado-prestamos">
+
+                <h1>Mis préstamos</h1>
+
+                <p>
+                    Acá podés consultar los libros que reservaste.
+                </p>
+
+            </div>
+
+
+            <div id="contenedor-prestamos" class="grilla-prestamos">
+                <p class="estado-carga">
+                    Cargando préstamos...
+                </p>
+            </div>
 
         </section>
 
@@ -54,15 +75,17 @@
 
 
     <footer>
+
         <p>
             &copy; 2026 Biblioteca Virtual
         </p>
+
     </footer>
 
 
     <script src="./assets/js/libros.js"></script>
     <script src="./assets/js/reservas.js"></script>
-    <script src="./assets/js/libro.js"></script>
+    <script src="./assets/js/prestamos.js"></script>
 
 </body>
 

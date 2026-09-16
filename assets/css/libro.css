@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f1eb;
+    color: #24201d;
+}
+
+
+/* MAIN */
+
+main {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+
+/* DETALLE */
+
+.detalle-libro {
+    padding: 70px 0;
+}
+
+.detalle-contenido {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* PORTADA */
+
+.detalle-portada img {
+    width: 100%;
+    display: block;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* INFORMACIÓN */
+
+.detalle-genero {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #8b6b4e;
+    font-weight: bold;
+}
+
+.detalle-informacion h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.detalle-autor {
+    font-size: 1.2rem;
+    color: #6f655e;
+
+    margin-bottom: 30px;
+}
+
+
+/* DATOS */
+
+.detalle-datos {
+    display: grid;
+    gap: 12px;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* SINOPSIS */
+
+.detalle-sinopsis {
+    margin-top: 30px;
+}
+
+.detalle-sinopsis h2 {
+    margin-bottom: 15px;
+}
+
+.detalle-sinopsis p {
+    line-height: 1.7;
+    color: #514943;
+}
+
+
+/* DISPONIBILIDAD */
+
+.disponible,
+.prestado {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.disponible {
+    background-color: #dcefdc;
+    color: #286328;
+}
+
+.prestado {
+    background-color: #f3dddd;
+    color: #8a2929;
+}
+
+
+/* BOTÓN */
+
+.boton-reservar {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2c211b;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.boton-reservar:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.boton-reservar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* ESTADOS */
+
+.estado-carga,
+.libro-no-encontrado {
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.libro-no-encontrado h1 {
+    margin-bottom: 15px;
+}
+
+.libro-no-encontrado p {
+    margin-bottom: 25px;
+}
+
+.libro-no-encontrado a {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background-color: #2c211b;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .detalle-contenido {
+        grid-template-columns: 1fr;
+    }
+
+    .detalle-portada {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .detalle-informacion h1 {
+        font-size: 2.2rem;
+    }
+
+}
