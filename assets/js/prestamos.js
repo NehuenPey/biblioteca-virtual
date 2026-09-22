@@ -119,6 +119,18 @@ function iniciarPrestamos() {
   const librosReservados = obtenerLibrosReservados();
 
   renderizarPrestamos(librosReservados);
+
+  actualizarResumenPrestamos();
+}
+
+function actualizarResumenPrestamos() {
+  const contadorResumen = document.getElementById("contador-resumen");
+
+  if (!contadorResumen) {
+    return;
+  }
+
+  contadorResumen.textContent = obtenerCantidadReservas();
 }
 
 iniciarPrestamos();

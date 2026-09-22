@@ -5,38 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Detalle del libro | Biblioteca Virtual</title>
+    <title>Libro | Papiro</title>
 
     <link rel="stylesheet" href="./assets/css/libro.css">
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Biblioteca Virtual</a>
+    <header class="header">
 
-            <ul>
+        <nav class="navegacion">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-nombre">
+                    Papiro
+                </span>
+
+                <span class="logo-descripcion">
+                    Biblioteca Virtual
+                </span>
+
+            </a>
+
+
+            <ul class="menu">
+
                 <li>
-                    <a href="index.html">Inicio</a>
+                    <a href="index.html">
+                        Inicio
+                    </a>
                 </li>
 
                 <li>
-                    <a href="catalogo.html">Catálogo</a>
+                    <a href="catalogo.html" class="activo">
+                        Catálogo
+                    </a>
                 </li>
 
                 <li>
-                    <a href="contacto.html">Contacto</a>
+                    <a href="prestamos.html">
+                        Mis préstamos
+                    </a>
                 </li>
+
+                <li>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
+                </li>
+
             </ul>
 
-            <div>
-                <a href="prestamos.html">
-                    Mis préstamos:
-                    <strong id="contador-prestamos">0</strong>
-                </a>
-            </div>
+
+            <a href="prestamos.html" class="contador">
+
+                <span>
+                    Mis préstamos
+                </span>
+
+                <strong id="contador-prestamos">
+                    0
+                </strong>
+
+            </a>
+
         </nav>
+
     </header>
 
 
@@ -45,7 +80,7 @@
         <section id="detalle-libro" class="detalle-libro">
 
             <p class="estado-carga">
-                Cargando libro...
+                Abriendo libro...
             </p>
 
         </section>
@@ -53,10 +88,28 @@
     </main>
 
 
-    <footer>
-        <p>
-            &copy; 2026 Biblioteca Virtual
-        </p>
+    <footer class="footer">
+
+        <div class="footer-contenido">
+
+            <div>
+
+                <span class="footer-logo">
+                    Papiro
+                </span>
+
+                <p>
+                    Biblioteca Virtual
+                </p>
+
+            </div>
+
+            <p>
+                &copy; 2026 Papiro. Todos los derechos reservados.
+            </p>
+
+        </div>
+
     </footer>
 
 

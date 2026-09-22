@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | Papiro</title>
+
+    <link rel="stylesheet" href="./assets/css/contacto.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <nav class="navegacion">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-nombre">
+                    Papiro
+                </span>
+
+                <span class="logo-descripcion">
+                    Biblioteca Virtual
+                </span>
+
+            </a>
+
+
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="catalogo.html">
+                        Catálogo
+                    </a>
+                </li>
+
+                <li>
+                    <a href="prestamos.html">
+                        Mis préstamos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contacto.html" class="activo">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <a href="prestamos.html" class="contador">
+
+                <span>
+                    Mis préstamos
+                </span>
+
+                <strong id="contador-prestamos">
+                    0
+                </strong>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="contacto">
+
+            <!-- ENCABEZADO -->
+
+            <div class="encabezado-contacto">
+
+                <span class="etiqueta">
+                    Estamos para ayudarte
+                </span>
+
+                <h1>
+                    Hablemos de libros.
+                </h1>
+
+                <p>
+                    ¿Tenés alguna consulta sobre un libro,
+                    una reserva o tu cuenta? Escribinos.
+                    Te vamos a responder lo antes posible.
+                </p>
+
+            </div>
+
+
+            <!-- CONTENIDO -->
+
+            <div class="contenido-contacto">
+
+
+                <!-- INFORMACIÓN -->
+
+                <aside class="informacion-contacto">
+
+                    <div class="bloque-contacto">
+
+                        <span class="numero">
+                            01
+                        </span>
+
+                        <h2>
+                            Consultas
+                        </h2>
+
+                        <p>
+                            Estamos disponibles para ayudarte
+                            con cualquier duda relacionada con
+                            el catálogo o tus reservas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bloque-contacto">
+
+                        <span class="numero">
+                            02
+                        </span>
+
+                        <h2>
+                            Sugerencias
+                        </h2>
+
+                        <p>
+                            ¿Hay un libro que te gustaría
+                            encontrar en Papiro? También
+                            podés contarnos.
+                        </p>
+
+                    </div>
+
+
+                    <div class="frase-contacto">
+
+                        <span>
+                            “
+                        </span>
+
+                        <p>
+                            Una buena conversación puede
+                            empezar con una buena historia.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- FORMULARIO -->
+
+                <div class="contenedor-formulario">
+
+                    <form id="formulario-contacto" novalidate>
+
+                        <div class="campo">
+
+                            <label for="nombre">
+                                Nombre completo
+                            </label>
+
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre">
+
+                            <small id="error-nombre" class="mensaje-error"></small>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input type="email" id="email" name="email" placeholder="ejemplo@email.com">
+
+                            <small id="error-email" class="mensaje-error"></small>
+
+                        </div>
+
+
+                        <div class="fila-campos">
+
+                            <div class="campo">
+
+                                <label for="socio">
+                                    Número de socio
+                                </label>
+
+                                <input type="text" id="socio" name="socio" placeholder="Ej: SOC-001">
+
+                                <small id="error-socio" class="mensaje-error"></small>
+
+                            </div>
+
+
+                            <div class="campo">
+
+                                <label for="consulta">
+                                    Consulta
+                                </label>
+
+                                <input type="text" id="consulta" name="consulta" placeholder="Motivo de tu consulta">
+
+                                <small id="error-consulta" class="mensaje-error"></small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="campo">
+
+                            <label for="mensaje">
+                                Mensaje
+                            </label>
+
+                            <textarea id="mensaje" name="mensaje" rows="7"
+                                placeholder="Escribí tu mensaje..."></textarea>
+
+                            <small id="error-mensaje" class="mensaje-error"></small>
+
+                        </div>
+
+
+                        <button type="submit" class="boton-enviar">
+                            Enviar consulta
+                        </button>
+
+
+                        <div id="mensaje-formulario" class="mensaje-formulario" role="status" aria-live="polite"></div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="footer-contenido">
+
+            <div>
+
+                <span class="footer-logo">
+                    Papiro
+                </span>
+
+                <p>
+                    Biblioteca Virtual
+                </p>
+
+            </div>
+
+            <p>
+                &copy; 2026 Papiro. Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="./assets/js/reservas.js"></script>
+    <script src="./assets/js/contacto.js"></script>
+
+</body>
+
+</html>

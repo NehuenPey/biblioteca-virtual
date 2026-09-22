@@ -5,46 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mis préstamos | Biblioteca Virtual</title>
+    <title>Mis préstamos | Papiro</title>
 
     <link rel="stylesheet" href="./assets/css/prestamos.css">
 </head>
 
 <body>
 
-    <header>
-        <nav>
+    <header class="header">
 
-            <a href="index.html">
-                Biblioteca Virtual
+        <nav class="navegacion">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-nombre">
+                    Papiro
+                </span>
+
+                <span class="logo-descripcion">
+                    Biblioteca Virtual
+                </span>
+
             </a>
 
-            <ul>
+
+            <ul class="menu">
+
                 <li>
-                    <a href="index.html">Inicio</a>
+                    <a href="index.html">
+                        Inicio
+                    </a>
                 </li>
 
                 <li>
-                    <a href="catalogo.html">Catálogo</a>
+                    <a href="catalogo.html">
+                        Catálogo
+                    </a>
                 </li>
 
                 <li>
-                    <a href="prestamos.html">Mis préstamos</a>
+                    <a href="prestamos.html" class="activo">
+                        Mis préstamos
+                    </a>
                 </li>
 
                 <li>
-                    <a href="contacto.html">Contacto</a>
+                    <a href="contacto.html">
+                        Contacto
+                    </a>
                 </li>
+
             </ul>
 
-            <div>
-                <a href="prestamos.html">
-                    Mis préstamos:
-                    <strong id="contador-prestamos">0</strong>
-                </a>
-            </div>
+
+            <a href="prestamos.html" class="contador">
+
+                <span>
+                    Mis préstamos
+                </span>
+
+                <strong id="contador-prestamos">
+                    0
+                </strong>
+
+            </a>
 
         </nav>
+
     </header>
 
 
@@ -52,33 +79,123 @@
 
         <section class="prestamos">
 
+            <!-- ENCABEZADO -->
+
             <div class="encabezado-prestamos">
 
-                <h1>Mis préstamos</h1>
+                <div>
 
-                <p>
-                    Acá podés consultar los libros que reservaste.
-                </p>
+                    <span class="etiqueta">
+                        Tu biblioteca
+                    </span>
+
+                    <h1>
+                        Mis préstamos
+                    </h1>
+
+                    <p>
+                        Acá vas a encontrar los libros que
+                        elegiste reservar. Tu próxima lectura
+                        empieza acá.
+                    </p>
+
+                </div>
+
+
+                <div class="resumen-prestamos">
+
+                    <strong id="contador-resumen">
+                        0
+                    </strong>
+
+                    <span>
+                        libros<br>
+                        reservados
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <div id="contenedor-prestamos" class="grilla-prestamos">
-                <p class="estado-carga">
-                    Cargando préstamos...
-                </p>
-            </div>
+            <!-- LIBROS RESERVADOS -->
+
+            <section class="seccion-reservas">
+
+                <div class="titulo-reservas">
+
+                    <h2>
+                        Tus lecturas
+                    </h2>
+
+                    <p>
+                        Podés consultar cada libro o cancelar
+                        una reserva cuando quieras.
+                    </p>
+
+                </div>
+
+
+                <div id="contenedor-prestamos" class="grilla-prestamos">
+
+                    <p class="estado-carga">
+                        Cargando tus libros...
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXPLORAR -->
+
+            <section class="descubrir">
+
+                <div>
+
+                    <span class="etiqueta">
+                        Seguí descubriendo
+                    </span>
+
+                    <h2>
+                        Siempre hay otra historia
+                        esperándote.
+                    </h2>
+
+                </div>
+
+                <a href="catalogo.html" class="boton-catalogo">
+                    Explorar catálogo
+                </a>
+
+            </section>
 
         </section>
 
     </main>
 
 
-    <footer>
+    <footer class="footer">
 
-        <p>
-            &copy; 2026 Biblioteca Virtual
-        </p>
+        <div class="footer-contenido">
+
+            <div>
+
+                <span class="footer-logo">
+                    Papiro
+                </span>
+
+                <p>
+                    Biblioteca Virtual
+                </p>
+
+            </div>
+
+            <p>
+                &copy; 2026 Papiro. Todos los derechos reservados.
+            </p>
+
+        </div>
 
     </footer>
 

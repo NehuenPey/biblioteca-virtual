@@ -1,5 +1,5 @@
 /* =========================================================
-   PAPIRO — CATÁLOGO
+   PAPIRO — CONTACTO
    ========================================================= */
 
 * {
@@ -26,6 +26,8 @@
     --blanco: #ffffff;
 
     --borde: #eadfce;
+
+    --error: #a94c3d;
 }
 
 
@@ -50,10 +52,6 @@ a {
     color: inherit;
 }
 
-img {
-    max-width: 100%;
-}
-
 
 /* =========================================================
    TIPOGRAFÍA
@@ -63,7 +61,6 @@ h1,
 h2,
 h3 {
     font-family: Georgia, "Times New Roman", serif;
-    font-weight: 700;
 }
 
 
@@ -78,6 +75,7 @@ h3 {
 
     background-color: var(--crema-papel);
 }
+
 
 .navegacion {
     width: min(1200px, 92%);
@@ -105,13 +103,16 @@ h3 {
     line-height: 1;
 }
 
+
 .logo-nombre {
     color: var(--naranja-papiro);
 
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 1.8rem;
     font-weight: bold;
 }
+
 
 .logo-descripcion {
     margin-top: 5px;
@@ -136,6 +137,7 @@ h3 {
     list-style: none;
 }
 
+
 .menu a {
     color: var(--azul-petroleo);
 
@@ -146,6 +148,7 @@ h3 {
 
     transition: color 0.2s ease;
 }
+
 
 .menu a:hover,
 .menu a.activo {
@@ -168,6 +171,7 @@ h3 {
     font-size: 0.85rem;
 }
 
+
 .contador strong {
     min-width: 27px;
     height: 27px;
@@ -179,6 +183,7 @@ h3 {
     border-radius: 50%;
 
     background-color: var(--naranja-papiro);
+
     color: var(--blanco);
 
     font-size: 0.75rem;
@@ -197,7 +202,16 @@ main {
 
 
 /* =========================================================
-   ETIQUETAS
+   CONTACTO
+   ========================================================= */
+
+.contacto {
+    padding: 80px 0 100px;
+}
+
+
+/* =========================================================
+   ETIQUETA
    ========================================================= */
 
 .etiqueta {
@@ -211,47 +225,37 @@ main {
     font-weight: 700;
 
     letter-spacing: 0.12em;
+
     text-transform: uppercase;
 }
 
 
 /* =========================================================
-   ENCABEZADO DEL CATÁLOGO
+   ENCABEZADO
    ========================================================= */
 
-.encabezado-catalogo {
-    min-height: 390px;
+.encabezado-contacto {
+    max-width: 800px;
 
-    padding: 80px 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 50px;
+    padding-bottom: 60px;
 
     border-bottom: 1px solid var(--borde);
 }
 
 
-.encabezado-contenido {
-    max-width: 720px;
-}
-
-.encabezado-contenido h1 {
-    margin-bottom: 25px;
+.encabezado-contacto h1 {
+    margin-bottom: 20px;
 
     color: var(--azul-petroleo);
 
     font-size: clamp(3rem, 6vw, 5rem);
 
     line-height: 1.05;
-
-    letter-spacing: 0.02em;
 }
 
-.encabezado-contenido p {
-    max-width: 600px;
+
+.encabezado-contacto p {
+    max-width: 680px;
 
     color: var(--gris-tinta);
 
@@ -261,213 +265,19 @@ main {
 }
 
 
-/* CONTADOR DE LIBROS */
-
-.contador-libros {
-    min-width: 170px;
-
-    padding: 30px;
-
-    border-left: 1px solid var(--borde);
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-}
-
-.contador-libros strong {
-    color: var(--dorado-antiguo);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 5rem;
-
-    line-height: 1;
-}
-
-.contador-libros span {
-    margin-top: 12px;
-
-    color: var(--gris-suave);
-
-    font-size: 0.72rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.08em;
-}
-
-
 /* =========================================================
-   BUSCADOR
+   CONTENIDO
    ========================================================= */
 
-.busqueda {
-    padding: 55px 0 35px;
-}
+.contenido-contacto {
+    padding-top: 65px;
 
-
-.busqueda label {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color: var(--azul-petroleo);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 1.35rem;
-    font-weight: 700;
-}
-
-
-.contenedor-buscador {
-    position: relative;
-
-    max-width: 700px;
-}
-
-
-.icono-busqueda {
-    position: absolute;
-
-    left: 18px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    color: var(--naranja-papiro);
-
-    font-size: 1.5rem;
-
-    pointer-events: none;
-}
-
-
-#buscador-libros {
-    width: 100%;
-
-    padding: 16px 20px 16px 50px;
-
-    border: 1px solid var(--borde);
-    border-radius: 4px;
-
-    outline: none;
-
-    background-color: var(--blanco);
-
-    color: var(--azul-petroleo);
-
-    font-family: Inter, Arial, sans-serif;
-
-    font-size: 1rem;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-#buscador-libros::placeholder {
-    color: #9a9690;
-}
-
-#buscador-libros:focus {
-    border-color: var(--naranja-papiro);
-
-    box-shadow:
-        0 0 0 3px rgba(226, 113, 29, 0.12);
-}
-
-
-.ayuda-busqueda {
-    margin-top: 9px;
-
-    color: var(--gris-suave);
-
-    font-size: 0.78rem;
-}
-
-
-/* =========================================================
-   CATÁLOGO
-   ========================================================= */
-
-.catalogo {
-    padding: 20px 0 100px;
-}
-
-
-.grilla-libros {
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        0.75fr 1.25fr;
 
-    gap: 25px;
-}
-
-
-/* =========================================================
-   TARJETAS
-   ========================================================= */
-
-.tarjeta-libro {
-    min-width: 0;
-
-    background-color: var(--blanco);
-
-    border: 1px solid var(--borde);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.tarjeta-libro:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 12px 30px rgba(31, 75, 92, 0.10);
-}
-
-
-.tarjeta-enlace {
-    display: block;
-
-    color: inherit;
-
-    text-decoration: none;
-}
-
-
-/* =========================================================
-   PORTADA
-   ========================================================= */
-
-.portada-libro {
-    height: 330px;
-
-    overflow: hidden;
-
-    background-color: #eee5d8;
-}
-
-.portada-libro img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition: transform 0.3s ease;
-}
-
-.tarjeta-libro:hover .portada-libro img {
-    transform: scale(1.03);
+    gap: 90px;
 }
 
 
@@ -475,94 +285,276 @@ main {
    INFORMACIÓN
    ========================================================= */
 
-.informacion-libro {
-    padding: 21px;
+.informacion-contacto {
+    display: flex;
+    flex-direction: column;
+
+    gap: 45px;
 }
 
 
-.informacion-libro h2 {
-    margin-bottom: 7px;
+.bloque-contacto {
+    max-width: 380px;
+}
+
+
+.numero {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--dorado-antiguo);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+}
+
+
+.bloque-contacto h2 {
+    margin-bottom: 10px;
 
     color: var(--azul-petroleo);
 
-    font-size: 1.25rem;
-
-    line-height: 1.3;
+    font-size: 1.8rem;
 }
 
 
-.autor {
-    margin-bottom: 7px;
+.bloque-contacto p {
+    color: var(--gris-suave);
+
+    font-size: 0.92rem;
+
+    line-height: 1.75;
+}
+
+
+/* FRASE */
+
+.frase-contacto {
+    margin-top: 15px;
+
+    padding: 35px 30px;
+
+    border-left: 3px solid var(--naranja-papiro);
+
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+
+.frase-contacto span {
+    display: block;
+
+    height: 25px;
+
+    color: var(--naranja-papiro);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 3.5rem;
+
+    line-height: 1;
+}
+
+
+.frase-contacto p {
+    color: var(--azul-petroleo);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.contenedor-formulario {
+    padding: 40px;
+
+    background-color: var(--blanco);
+
+    border: 1px solid var(--borde);
+}
+
+
+#formulario-contacto {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   FILAS
+   ========================================================= */
+
+.fila-campos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CAMPO
+   ========================================================= */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.campo label {
+    margin-bottom: 8px;
+
+    color: var(--azul-petroleo);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+
+.campo input,
+.campo textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid var(--borde);
+
+    border-radius: 0;
+
+    background-color: #fffdfa;
 
     color: var(--gris-tinta);
 
-    font-size: 0.88rem;
+    font-family: Inter, Arial, sans-serif;
+
+    font-size: 0.9rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-.genero {
-    margin-bottom: 15px;
+.campo textarea {
+    resize: vertical;
 
-    color: var(--gris-suave);
-
-    font-size: 0.78rem;
+    min-height: 150px;
 }
 
 
-/* =========================================================
-   DISPONIBILIDAD
-   ========================================================= */
-
-.disponible,
-.prestado {
-    display: inline-block;
-
-    padding: 5px 10px;
-
-    border-radius: 20px;
-
-    font-size: 0.7rem;
-    font-weight: 600;
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #9a9a96;
 }
 
-.disponible {
-    background-color: #e3eedf;
 
-    color: var(--verde-musgo);
-}
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--naranja-papiro);
 
-.prestado {
-    background-color: #f3e2d8;
-
-    color: #a6542b;
+    box-shadow:
+        0 0 0 3px rgba(226, 113, 29, 0.10);
 }
 
 
 /* =========================================================
-   ESTADOS
+   ERRORES
    ========================================================= */
 
-.estado-carga {
-    grid-column: 1 / -1;
+.campo-invalido {
+    border-color: var(--error) !important;
 
-    padding: 70px 20px;
-
-    color: var(--gris-suave);
-
-    text-align: center;
+    box-shadow:
+        0 0 0 3px rgba(169, 76, 61, 0.08) !important;
 }
 
-.estado-carga::after {
-    content: "";
 
-    display: block;
+.mensaje-error {
+    min-height: 18px;
 
-    width: 35px;
-    height: 2px;
+    margin-top: 5px;
 
-    margin: 14px auto 0;
+    color: var(--error);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   BOTÓN
+   ========================================================= */
+
+.boton-enviar {
+    align-self: flex-start;
+
+    padding: 14px 25px;
+
+    border: 2px solid var(--naranja-papiro);
 
     background-color: var(--naranja-papiro);
+
+    color: var(--blanco);
+
+    font-family: Inter, Arial, sans-serif;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.boton-enviar:hover {
+    background-color: transparent;
+
+    color: var(--naranja-papiro);
+}
+
+
+/* =========================================================
+   MENSAJE DEL FORMULARIO
+   ========================================================= */
+
+.mensaje-formulario {
+    min-height: 22px;
+
+    font-size: 0.82rem;
+}
+
+
+.mensaje-exito {
+    padding: 12px 15px;
+
+    border-left: 3px solid var(--verde-musgo);
+
+    background-color: #edf3e9;
+
+    color: var(--verde-musgo);
 }
 
 
@@ -615,23 +607,14 @@ main {
    RESPONSIVE
    ========================================================= */
 
-@media (max-width: 1050px) {
-
-    .grilla-libros {
-        grid-template-columns:
-            repeat(3, minmax(0, 1fr));
-    }
-
-}
-
-
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
     .navegacion {
         flex-wrap: wrap;
 
         padding: 20px 0;
     }
+
 
     .menu {
         order: 3;
@@ -641,12 +624,26 @@ main {
         justify-content: center;
     }
 
-    .encabezado-catalogo {
-        min-height: auto;
 
-        padding: 70px 0;
+    .contenido-contacto {
+        grid-template-columns: 1fr;
 
-        align-items: flex-start;
+        gap: 60px;
+    }
+
+
+    .informacion-contacto {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 30px;
+    }
+
+
+    .frase-contacto {
+        grid-column: 1 / -1;
     }
 
 }
@@ -662,54 +659,39 @@ main {
         overflow-x: auto;
     }
 
+
     .contador span {
         display: none;
     }
 
-    .encabezado-catalogo {
+
+    .encabezado-contacto {
+        padding-bottom: 45px;
+    }
+
+
+    .contenido-contacto {
+        padding-top: 50px;
+    }
+
+
+    .informacion-contacto {
+        display: flex;
+    }
+
+
+    .contenedor-formulario {
+        padding: 30px 25px;
+    }
+
+
+    .fila-campos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .descubrir {
         flex-direction: column;
-
-        gap: 40px;
-    }
-
-    .encabezado-contenido h1 {
-        font-size: 3.1rem;
-    }
-
-    .contador-libros {
-        width: 100%;
-
-        padding: 25px 0;
-
-        flex-direction: row;
-
-        justify-content: flex-start;
-
-        gap: 18px;
-
-        border-left: none;
-        border-top: 1px solid var(--borde);
-    }
-
-    .contador-libros strong {
-        font-size: 3.5rem;
-    }
-
-    .contador-libros span {
-        margin-top: 0;
-
-        text-align: left;
-    }
-
-    .grilla-libros {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 18px;
-    }
-
-    .portada-libro {
-        height: 300px;
     }
 
 }
@@ -721,29 +703,31 @@ main {
         font-size: 1.5rem;
     }
 
+
     .logo-descripcion {
         font-size: 0.55rem;
     }
 
-    .encabezado-contenido h1 {
-        font-size: 2.7rem;
+
+    .contacto {
+        padding-top: 60px;
     }
 
-    .encabezado-contenido p {
-        font-size: 0.95rem;
+
+    .encabezado-contacto h1 {
+        font-size: 3rem;
     }
 
-    .grilla-libros {
-        grid-template-columns: 1fr;
+
+    .contenedor-formulario {
+        padding: 25px 20px;
     }
 
-    .portada-libro {
-        height: 380px;
+
+    .boton-enviar {
+        width: 100%;
     }
 
-    .informacion-libro {
-        padding: 20px;
-    }
 
     .footer-contenido {
         padding: 35px 0;
