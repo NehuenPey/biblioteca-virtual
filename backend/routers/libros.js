@@ -4,21 +4,11 @@ const router = express.Router();
 
 const libros = require("../data/libros");
 
-
-// =========================================================
-// GET /api/libros
-// Obtener todos los libros
-// =========================================================
-
 router.get("/", (req, res) => {
 
     res.json(libros);
 
 });
-
-
-// GET /api/libros/:id
-// Obtener un libro por ID
 
 
 router.get("/:id", (req, res) => {
