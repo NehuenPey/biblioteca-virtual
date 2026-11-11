@@ -386,3 +386,15 @@ main { width: min(1240px, 90%); margin: 0 auto; }
   .paginacion { gap: 6px; }
   .pagina-boton { min-width: 38px; min-height: 38px; padding: 8px 11px; }
 }
+
+
+/* Paginación compacta */
+.pagina-separador {
+  display: inline-flex;
+  min-width: 24px;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-weight: 800;
+  user-select: none;
+}
