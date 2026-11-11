@@ -41,6 +41,5 @@
 - `npm run db:generate`: genera Prisma Client desde el esquema.
 - `npm run db:migrate`: crea/aplica migraciones en desarrollo.
 - `npm run db:studio`: abre Prisma Studio.
-- `npm run db:seed`: ejecuta la carga inicial cuando esté implementada.
 
 No subir nunca el archivo `.env` ni compartir credenciales de PostgreSQL.
