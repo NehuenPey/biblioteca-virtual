@@ -4,185 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Explorá el catálogo de Papiro, encontrá libros por título, autor o género y consultá su disponibilidad.">
     <title>Catálogo | Papiro</title>
-
     <link rel="stylesheet" href="./assets/css/papiro.css">
 </head>
 
 <body>
-
     <header class="header">
-
         <nav class="navegacion">
-
             <a href="index.html" class="logo">
-                <span class="logo-nombre">
-                    Papiro
-                </span>
-
-                <span class="logo-descripcion">
-                    Biblioteca Virtual
-                </span>
+                <span class="logo-nombre">Papiro</span>
+                <span class="logo-descripcion">Biblioteca Virtual</span>
             </a>
 
             <ul class="menu">
-
-                <li>
-                    <a href="index.html">
-                        Inicio
-                    </a>
-                </li>
-
-                <li>
-                    <a href="catalogo.html" class="activo">
-                        Catálogo
-                    </a>
-                </li>
-
-                <li>
-                    <a href="prestamos.html">
-                        Mis préstamos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contacto.html">
-                        Contacto
-                    </a>
-                </li>
-
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html" class="activo">Catálogo</a></li>
+                <li><a href="prestamos.html">Mis préstamos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
 
             <a href="prestamos.html" class="contador">
-
-                <span>
-                    Mis préstamos
-                </span>
-
-                <strong id="contador-prestamos">
-                    0
-                </strong>
-
+                <span>Mis préstamos</span>
+                <strong id="contador-prestamos">0</strong>
             </a>
-
         </nav>
-
     </header>
 
-
     <main>
-
-        <!-- ENCABEZADO -->
-
         <section class="encabezado-catalogo">
-
             <div class="encabezado-contenido">
-
-                <span class="etiqueta">
-                    La colección
-                </span>
-
-                <h1>
-                    Encontrá una historia
-                    para vos.
-                </h1>
-
-                <p>
-                    Explorá nuestra colección por título o autor.
-                    Cada libro puede ser el comienzo de una
-                    nueva historia.
-                </p>
-
+                <span class="etiqueta">La colección</span>
+                <h1>Encontrá una historia para vos.</h1>
+                <p>Explorá nuestra colección, descubrí nuevos autores y encontrá tu próxima lectura.</p>
             </div>
 
-            <div class="contador-libros">
-
-                <strong>
-                    10
-                </strong>
-
-                <span>
-                    libros<br>
-                    disponibles en catálogo
-                </span>
-
+            <div class="contador-libros" aria-live="polite">
+                <strong id="total-libros">—</strong>
+                <span>libros<br>en el catálogo</span>
             </div>
-
         </section>
 
-
-        <!-- BUSCADOR -->
-
-        <section class="busqueda">
-
-            <label for="buscador-libros">
-                ¿Qué estás buscando?
-            </label>
-
-            <div class="contenedor-buscador">
-
-                <span class="icono-busqueda" aria-hidden="true">
-                    ⌕
-                </span>
-
-                <input type="search" id="buscador-libros" placeholder="Buscar por título o autor..." autocomplete="off">
-
+        <section class="busqueda" aria-label="Buscar y filtrar libros">
+            <div class="busqueda-principal">
+                <label for="buscador-libros">¿Qué estás buscando?</label>
+                <div class="contenedor-buscador">
+                    <span class="icono-busqueda" aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        id="buscador-libros"
+                        placeholder="Buscar por título o autor..."
+                        autocomplete="off"
+                        aria-describedby="ayuda-busqueda"
+                    >
+                </div>
+                <p class="ayuda-busqueda" id="ayuda-busqueda">También podés buscar por género o ISBN.</p>
             </div>
 
-            <p class="ayuda-busqueda">
-                Podés buscar por el nombre del libro o de su autor.
-            </p>
+            <div class="controles-catalogo">
+                <div class="control-filtro">
+                    <label for="filtro-genero">Género</label>
+                    <select id="filtro-genero">
+                        <option value="">Todos los géneros</option>
+                    </select>
+                </div>
 
+                <div class="control-filtro">
+                    <label for="filtro-disponibilidad">Disponibilidad</label>
+                    <select id="filtro-disponibilidad">
+                        <option value="">Todos</option>
+                        <option value="disponible">Disponibles</option>
+                        <option value="prestado">No disponibles</option>
+                    </select>
+                </div>
+
+                <div class="control-filtro">
+                    <label for="orden-catalogo">Ordenar por</label>
+                    <select id="orden-catalogo">
+                        <option value="titulo-asc">Título: A a Z</option>
+                        <option value="titulo-desc">Título: Z a A</option>
+                        <option value="autor-asc">Autor: A a Z</option>
+                        <option value="anio-desc">Más recientes</option>
+                        <option value="anio-asc">Más antiguos</option>
+                    </select>
+                </div>
+
+                <button type="button" id="limpiar-filtros" class="boton-limpiar">Limpiar filtros</button>
+            </div>
         </section>
 
-
-        <!-- CATÁLOGO -->
-
-        <section class="catalogo">
-
-            <div id="contenedor-libros" class="grilla-libros">
-
-                <p class="estado-carga">
-                    Cargando catálogo...
-                </p>
-
+        <section class="catalogo" aria-label="Resultados del catálogo">
+            <div class="resumen-catalogo">
+                <p id="resumen-resultados" aria-live="polite">Cargando libros...</p>
             </div>
 
-        </section>
+            <div id="contenedor-libros" class="grilla-libros" aria-live="polite">
+                <p class="estado-carga">Cargando catálogo...</p>
+            </div>
 
+            <nav id="paginacion" class="paginacion" aria-label="Paginación del catálogo" hidden></nav>
+        </section>
     </main>
 
-
     <footer class="footer">
-
         <div class="footer-contenido">
-
             <div>
-
-                <span class="footer-logo">
-                    Papiro
-                </span>
-
-                <p>
-                    Biblioteca Virtual
-                </p>
-
+                <span class="footer-logo">Papiro</span>
+                <p>Biblioteca Virtual</p>
             </div>
-
-            <p>
-                &copy; 2026 Papiro. Todos los derechos reservados.
-            </p>
-
+            <p>&copy; 2026 Papiro. Todos los derechos reservados.</p>
         </div>
-
     </footer>
-
 
     <script src="./assets/js/libros.js"></script>
     <script src="./assets/js/reservas.js"></script>
     <script src="./assets/js/catalogo.js"></script>
-
 </body>
-
 </html>
