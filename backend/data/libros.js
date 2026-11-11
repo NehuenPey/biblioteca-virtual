@@ -10,7 +10,7 @@ const libros = [
     destacado: true,
     sinopsis:
       "Un pequeño príncipe viaja por distintos planetas y conoce personajes que lo llevan a reflexionar sobre la amistad, el amor y la importancia de mirar más allá de las apariencias.",
-    portada: "./assets/img/libros/el-principito.jpg",
+    portada: "./assets/img/el-principito.jpg",
     disponible: true,
   },
 
@@ -25,7 +25,7 @@ const libros = [
     destacado: true,
     sinopsis:
       "Winston Smith vive en una sociedad controlada por un régimen totalitario que vigila constantemente a sus ciudadanos y manipula la información y la historia.",
-    portada: "./assets/img/libros/1984.jpg",
+    portada: "./assets/img/1984.jpg",
     disponible: true,
   },
 
@@ -40,7 +40,7 @@ const libros = [
     destacado: true,
     sinopsis:
       "Bilbo Bolsón abandona la tranquilidad de su hogar para acompañar a un grupo de enanos en una aventura destinada a recuperar un tesoro custodiado por un poderoso dragón.",
-    portada: "./assets/img/libros/el-hobbit.jpg",
+    portada: "./assets/img/el-hobbit.jpg",
     disponible: true,
   },
 
@@ -55,7 +55,7 @@ const libros = [
     destacado: true,
     sinopsis:
       "La historia de varias generaciones de la familia Buendía y de la ciudad de Macondo, donde acontecimientos extraordinarios forman parte de la vida cotidiana.",
-    portada: "./assets/img/libros/cien-anos-de-soledad.jpg",
+    portada: "./assets/img/cien-anos-de-soledad.jpg",
     disponible: true,
   },
 
@@ -70,7 +70,7 @@ const libros = [
     destacado: false,
     sinopsis:
       "Elizabeth Bennet debe enfrentarse a las expectativas sociales de su época mientras desarrolla una compleja relación con el reservado y orgulloso señor Darcy.",
-    portada: "./assets/img/libros/orgullo-y-prejuicio.jpg",
+    portada: "./assets/img/orgullo-y-prejuicio.jpg",
     disponible: false,
   },
 
@@ -85,7 +85,7 @@ const libros = [
     destacado: false,
     sinopsis:
       "La novela reconstruye las circunstancias que rodean el asesinato de Santiago Nasar, un crimen que prácticamente toda la comunidad sabía que iba a ocurrir.",
-    portada: "./assets/img/libros/cronica-de-una-muerte-anunciada.jpg",
+    portada: "./assets/img/cronica-de-una-muerte-anunciada.jpg",
     disponible: true,
   },
 
@@ -100,7 +100,7 @@ const libros = [
     destacado: false,
     sinopsis:
       "En una sociedad donde los libros están prohibidos, Guy Montag trabaja como bombero encargado de quemarlos hasta que comienza a cuestionar el mundo en el que vive.",
-    portada: "./assets/img/libros/fahrenheit-451.jpg",
+    portada: "./assets/img/fahrenheit-451.jpg",
     disponible: true,
   },
 
@@ -115,7 +115,7 @@ const libros = [
     destacado: false,
     sinopsis:
       "Horacio Oliveira recorre París y Buenos Aires en una búsqueda personal marcada por el amor, la filosofía y una manera poco convencional de experimentar la realidad.",
-    portada: "./assets/img/libros/rayuela.jpg",
+    portada: "./assets/img/rayuela.jpg",
     disponible: false,
   },
 
@@ -130,7 +130,7 @@ const libros = [
     destacado: false,
     sinopsis:
       "Victor Frankenstein crea una criatura a partir de restos humanos y, horrorizado por su creación, la abandona, desencadenando una serie de acontecimientos trágicos.",
-    portada: "./assets/img/libros/frankenstein.jpg",
+    portada: "./assets/img/frankenstein.jpg",
     disponible: true,
   },
 
@@ -145,7 +145,7 @@ const libros = [
     destacado: false,
     sinopsis:
       "Daniel Sempere descubre un libro misterioso en el Cementerio de los Libros Olvidados y comienza una investigación sobre su autor y el oscuro pasado que lo rodea.",
-    portada: "./assets/img/libros/la-sombra-del-viento.jpg",
+    portada: "./assets/img/la-sombra-del-viento.jpg",
     disponible: true,
   },
 ];
