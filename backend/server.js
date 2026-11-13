@@ -6,6 +6,8 @@ const path = require("path");
 const logger = require("./middlewares/logger");
 const librosRouter = require("./routers/libros");
 const ejemplaresRouter = require("./routers/ejemplares");
+const authRouter = require("./routers/auth");
+const prestamosRouter = require("./routers/prestamos");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -17,7 +19,7 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PATCH, DELETE, OPTIONS",
   );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
   if (req.method === "OPTIONS") {
     return res.sendStatus(204);
@@ -32,6 +34,8 @@ app.use(express.json());
 app.use("/assets", express.static(path.join(__dirname, "../assets")));
 app.use("/api/libros", librosRouter);
 app.use("/api", ejemplaresRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/prestamos", prestamosRouter);
 
 app.get("/", (req, res) => {
   res.json({

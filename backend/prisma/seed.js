@@ -42,10 +42,7 @@ async function main() {
       where: {
         codigoInventario,
       },
-      update: {
-        bookId: book.id,
-        estado: libro.disponible ? "AVAILABLE" : "MAINTENANCE",
-      },
+      update: {},
       create: {
         bookId: book.id,
         codigoInventario,
