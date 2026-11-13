@@ -464,5 +464,143 @@ router.patch(
     }
   },
 );
+// PATCH /api/prestamos/:id/devolver
+// Registra la devolución de un ejemplar (ADMIN).
+router.patch(
+  "/:id/devolver",
+  verificarToken,
+  verificarRol("ADMIN"),
+  async (req, res) => {
+    try {
+      const { id } = req.params;
+
+      if (!id || !id.trim()) {
+        return res.status(400).json({
+          error: "El ID del préstamo es obligatorio.",
+        });
+      }
+
+      const prestamo = await prisma.$transaction(
+        async (tx) => {
+          const existente = await tx.loan.findUnique({
+            where: { id },
+            include: {
+              bookCopy: true,
+            },
+          });
+
+          if (!existente) {
+            throw new Error("PRESTAMO_NO_EXISTE");
+          }
+
+          if (!["ACTIVE", "OVERDUE"].includes(existente.estado)) {
+            throw new Error("ESTADO_INVALIDO");
+          }
+
+          if (existente.bookCopy.estado !== "LOANED") {
+            throw new Error("EJEMPLAR_ESTADO_INVALIDO");
+          }
+
+          const fechaDevolucion = new Date();
+
+          const prestamoActualizado = await tx.loan.updateMany({
+            where: {
+              id,
+              estado: {
+                in: ["ACTIVE", "OVERDUE"],
+              },
+            },
+            data: {
+              estado: "RETURNED",
+              fechaDevolucion,
+            },
+          });
+
+          if (prestamoActualizado.count !== 1) {
+            throw new Error("PRESTAMO_MODIFICADO");
+          }
+
+          const ejemplarActualizado = await tx.bookCopy.updateMany({
+            where: {
+              id: existente.bookCopyId,
+              estado: "LOANED",
+            },
+            data: {
+              estado: "AVAILABLE",
+            },
+          });
+
+          if (ejemplarActualizado.count !== 1) {
+            throw new Error("EJEMPLAR_ESTADO_INVALIDO");
+          }
+
+          return await tx.loan.findUnique({
+            where: { id },
+            include: {
+              user: {
+                select: {
+                  id: true,
+                  nombre: true,
+                  apellido: true,
+                  email: true,
+                },
+              },
+              bookCopy: {
+                include: {
+                  book: true,
+                },
+              },
+            },
+          });
+        },
+        {
+          isolationLevel: "Serializable",
+        },
+      );
+
+      return res.status(200).json({
+        mensaje: "Devolución registrada correctamente.",
+        prestamo,
+      });
+    } catch (error) {
+      if (error.message === "PRESTAMO_NO_EXISTE") {
+        return res.status(404).json({
+          error: "El préstamo solicitado no existe.",
+        });
+      }
+
+      if (error.message === "ESTADO_INVALIDO") {
+        return res.status(409).json({
+          error: "Solo se pueden devolver préstamos activos o vencidos.",
+        });
+      }
+
+      if (error.message === "EJEMPLAR_ESTADO_INVALIDO") {
+        return res.status(409).json({
+          error: "El ejemplar no se encuentra registrado como prestado.",
+        });
+      }
+
+      if (error.message === "PRESTAMO_MODIFICADO") {
+        return res.status(409).json({
+          error: "El préstamo fue modificado. Intentá nuevamente.",
+        });
+      }
+
+      if (error.code === "P2034") {
+        return res.status(409).json({
+          error:
+            "El préstamo o ejemplar fue modificado simultáneamente. Intentá nuevamente.",
+        });
+      }
+
+      console.error("Error al registrar devolución:", error);
+
+      return res.status(500).json({
+        error: "Error interno al registrar la devolución.",
+      });
+    }
+  },
+);
 
 module.exports = router;
